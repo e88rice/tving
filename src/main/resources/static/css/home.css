@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700,400italic");
+
+:root{
+    --black: rgba(0,0,0,1);
+    --white: rgba(255,255,255,1);
+
+    --font-size-s: 28px;
+    --font-size-m: 55px;
+
+    --font-family-inter: "Inter";
+}
+
+.inter-normal-white-55px{
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.hompeiji {
+    align-items: flex-start;
+    background-color: var(--black);
+    border: 1px none;
+    display: flex;
+    width: 100vw;
+}
+
+.hidden, .hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.overlap-group{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.text-2{
+    -webkit-text-stroke: 1px var(--white);
+    left: 550px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 300px;
+    width: 802px;
+}
+
+.f_jpg2048-1{
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    position: absolute;
+    filter: brightness(0.2);
+}
+
+.rectangle-1 {
+    background-color: #ff153c;
+    height: 110px;
+    left: 559px;
+    position: absolute;
+    top: 529px;
+    width: 623px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+.tving-new-icon-1 {
+    height: 110px;
+    left: 559px;
+    position: absolute;
+    top: 529px;
+    width: 97px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.text-1 {
+    -webkit-text-stroke: 1px var(--white);
+    left: 605px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 187px;
+    width: 653px;
+}
+
+.text-4 {
+    color: #7b7b7b;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    left: 605px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 437px;
+    width: 600px;
+}
+
+.tving-new-logo-mobile-1{
+    height: 46px;
+    left: 69px;
+    position: absolute;
+    top: 35px;
+    width: 122px;
+}
+
+.x{
+    height: 45px;
+    left: 655px;
+    position: absolute;
+    top: 565px;
+    width: 477px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.text-3{
+    -webkit-text-stroke: 1px var(--white);
+    left: 605px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 381px;
+    width: 627px;
+}
