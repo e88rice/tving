@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<link rel="stylesheet" href="../static/css/home.css">
+<link rel="stylesheet" th:href="@{/css/home.css}" href="../static/css/home.css">
 <body>
     <div class="hompeiji screen">
         <div class="overlap-group">
-            <div class="rectangle-1" onclick="location.href='/login.html'"></div>
-            <img class="f_jpg2048-1" src="../static/image/background.jpg" alt="" />
+            <div class="rectangle-1" th:onclick="|location.href='@{/}'|"></div>
+            <img class="f_jpg2048-1" src="../static/image/background.jpg" th:src="@{/image/background.jpg}" alt="" />
             <h1 class="text-1 inter-normal-white-55px">티빙 오리지널 콘텐츠,</h1>
             <div class="text-2 inter-normal-white-55px">방송, 영화, 해외시리즈까지!</div>
             <div class="text-3 inter-normal-white-55px">재미를 플레이해보세요.</div>
             <p class="text-4">간편하게 가입하고,  원하실 때 해지할 수 있어요.</p>
-            <img class="x" src="../static/image/x.png" alt="" onclick="location.href='/login.html'"/>
-            <img class="tving-new-icon-1" src="../static/image/tving-new-icon.svg" alt="tving-new-icon-1">
-            <img class="tving-new-logo-mobile-1" src="../static/image/tving-new-logo-mobile.svg" alt="tving-new-logo-mobile-1" onclick="location.href='/login.html'" />
+            <img class="x" src="/static/image/x.png" th:src="@{/image/x.png}"  alt="" th:onclick="|location.href='@{/login1}'|"/>
+            <img class="tving-new-icon-1" src="../static/image/tving-new-icon.svg" th:src="@{/image/tving-new-icon.svg}" alt="tving-new-icon-1">
+            <img class="tving-new-logo-mobile-1" th:src="@{/image/tving-new-logo-mobile.svg}" src="../static/image/tving-new-logo-mobile.svg" alt="tving-new-logo-mobile-1" th:onclick="|location.href='@{/login1}'|" />
         </div>
     </div>
 </body>
