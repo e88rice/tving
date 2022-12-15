@@ -5,56 +5,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<style>
-.main-top{
-  width: 100vw;
-  height: 850px;
-}
-.background{
-  background-image: url("/static/image/F_webp,1920.webp");
-}
-.contents-container{
-  margin: 0 2%;
-  position: absolute;
-  top: 830px;
-}
-.contents-container > div {
-  font-size: 30px;
-  font-weight: bold;
-}
-.details-look{
-  position: absolute;
-  top: 600px;
-  left: 1600px;
-  width: 200px;
-  height: 65px;
-  font-size: 20px;
-  letter-spacing: 2px;
-  font-weight: bold;
-  color: white;
-  border: 0.1em solid rgba(255,255,255,0.9);
-  border-radius: 0.4em;
-  background-color: hsla(0, 14%, 72%, 0.7);
-}
-.content-info-text{
-  position: absolute;
-  top: 480px;
-  left: 70px;
-  font-size: 50px;
-  font-weight: bold;
-}
-.content-info-text2{
-  position: absolute;
-  top: 620px;
-  left: 70px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #eeeeee;
-}
-
-</style>
 <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+<link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.15.4/css/all.css}" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 <script th:src="@{/js/main.js}" src="../static/js/main.js"></script>
 <body>
 <div class="main-top background">
@@ -75,6 +27,7 @@
   <div class="content-info-text2"><span>&lt;스킵&gt;,&lt;캐나다 체크인&gt;등</span></div>
 
   <button class="details-look">자세히보기</button>
+</div>
   <div class="contents-container">
     <div>티빙에서 꼭 봐야하는 콘텐츠</div>
     <div class="tving-contents">
@@ -88,7 +41,6 @@
       <img th:src="@{image/movie8.webp}" src="../static/image/movie8.webp" alt="">
     </div>
   </div>
-</div>
 
 </body>
 </html>

@@ -18,6 +18,9 @@ public class HomeController {
     @GetMapping("/login-main")
     public String tvinglogin(){ return "/login-main"; }
 
+    @GetMapping("/product")
+    public String product(){ return "/product"; }
+
     @GetMapping("/main")
     public String main(){ return "/main"; }
 

@@ -64,3 +64,48 @@ html{
     border-radius: 0.1em;
 }
 
+.main-top{
+    width: 100vw;
+    height: 850px;
+    background-image: url("/static/image/F_webp,1920.webp");
+}
+.contents-container{
+    margin: 0 2%;
+    position: absolute;
+    top: 830px;
+}
+.contents-container > div {
+    font-size: 30px;
+    font-weight: bold;
+}
+.details-look{
+    position: absolute;
+    top: 600px;
+    left: 1600px;
+    width: 200px;
+    height: 65px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: white;
+    border: 0.1em solid rgba(255,255,255,0.9);
+    border-radius: 0.4em;
+    background-color: hsla(0, 14%, 72%, 0.7);
+}
+.content-info-text{
+    position: absolute;
+    top: 480px;
+    left: 70px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.content-info-text2{
+    position: absolute;
+    top: 620px;
+    left: 70px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #eeeeee;
+}
+
+
