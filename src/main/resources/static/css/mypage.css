@@ -1,0 +1,245 @@
+html{
+    background-color: black;
+    color: white;
+}
+
+#top-navi{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 30px;
+}
+
+#top-navi-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+#top-navi-right{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+.navi-btns{
+    display: flex;
+    align-items: center;
+}
+.main-logo{
+    margin-right: 30px;
+    width: 100px;
+}
+.live-btn{
+    margin-right: 30px;
+}
+.live-btn{
+    margin-right: 30px;
+}
+.tv-program{
+    margin-right: 30px;
+}
+.movie{
+    margin-right: 30px;
+}
+.paramount{
+    margin-right: 30px;
+}
+.serach{
+    margin-right: 50px;
+}
+.user-icon > img{
+    width: 40px;
+}
+
+.my-info-container{
+    display: flex;
+    padding: 5rem 0;
+    background-color: #191919;
+    padding-left: 3.333rem;
+    padding-right: 3.333rem;
+
+}
+
+.my-info-icon > img{
+    width: 150px;
+}
+.my-info-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 50px;
+    width: 60vw;
+}
+.my-info-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-info-name > span{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.my-info-name > i {
+    font-size: 38px;
+    color: #a3a3a3;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.my-info-name > button {
+    width: 100px;
+    height: 55px;
+    border-radius: 0.2em;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 77, 77);
+    opacity: 0.7;
+    background: transparent;
+    vertical-align: 8px;
+    cursor: pointer;
+}
+
+.my-info-coupon > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #7b7b7b;
+}
+.my-info-coupon > span:nth-child(3){
+    padding: 0 10px;
+    color: white;
+    cursor: pointer;
+}
+.my-info-coupon > button{
+    width: 200px;
+    height: 30px;
+    border-radius: 0.2em;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 77, 77);
+    opacity: 0.7;
+    background: transparent;
+    cursor: pointer;
+}
+
+.my-info-coupon > i {
+    border-left: 1px solid rgb(77,77,77);
+    margin-left: 20px;
+    padding-left: 20px;
+    color: #7b7b7b;
+    font-size: 20px;
+}
+
+.my-info-coupon > span:nth-child(6){
+    padding-left: 10px;
+}
+
+.my-info-coupon > span:nth-child(7){
+    color: white;
+    padding-left: 15px;
+}
+
+.setting-btns{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.setting-position{
+    padding-top: 38px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.setting-position > i {
+    color: #7b7b7b;
+    font-size: 18px;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.setting-position > button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.setting-position > i:nth-child(3){
+    padding-left: 30px;
+}
+
+.banner-place > img {
+    width: 99.1vw;
+}
+.banner-place > i {
+    position: absolute;
+    top: 420px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+.history-container{
+    margin: 30px;
+}
+.my-historys{
+    border-bottom: 1px solid rgba(77,77,77,0.3);
+    height: 50px;
+}
+.my-historys > button{
+    font-size: 24px;
+    color: #d2d2d2;
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.my-historys > button:hover{
+    color: white;
+    border-bottom: 5px solid white;
+}
+.my-historys > button:nth-child(n+2){
+    margin-left: 40px;
+}
+
+.view-history-TV{
+    display: flex;
+    justify-content: space-around;
+}
+
+.view-history-category{
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+.view-history-category > button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    height: 40px;
+
+}
+
+.view-history-category >button:nth-child(2){
+    padding-left: 30px;
+    margin-left: 30px;
+    border-left: 1px solid rgba(255,255,255,0.5);
+}
+
+
+.view-history-TV > div > img{
+    width: 360px;
+}
+.history-TV-title{
+    padding-top: 10px;
+    font-weight: bold;
+}
+.history-TV-date{
+    padding-top: 10px;
+    color: #a3a3a3;
+    font-weight: bold;
+}
+

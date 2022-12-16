@@ -8,7 +8,7 @@ html{
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    margin-left: 30px;
+    margin: 0 30px;
 }
 
 #top-navi-left{
@@ -67,7 +67,7 @@ html{
 .main-top{
     width: 100vw;
     height: 850px;
-    background-image: url("/static/image/F_webp,1920.webp");
+    background-image: url("../image/F_webp,1920.webp");
 }
 .contents-container{
     margin: 0 2%;

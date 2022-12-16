@@ -1,12 +1,26 @@
 html{
-    background-color: black;
+    background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0) 10%,
+            rgba(0,0,0,0.5) 25%,
+            rgba(0,0,0,0.7) 40%,
+            rgba(0,0,0,0.8) 50%,
+            rgba(0,0,0,1) 80%,
+            rgba(0,0,0,1) 50%
+    ),
+    url("../image/1920.jpg");
     color: white;
+}
+.overlap-group{
+    -webkit-backdrop-filter: brightness(1.1) blur(40px);
+    backdrop-filter: brightness(1.1) blur(40px);
 }
 
 #top-navi{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+
 }
 
 #top-navi-left{

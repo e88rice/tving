@@ -24,5 +24,11 @@ public class HomeController {
     @GetMapping("/main")
     public String main(){ return "/main"; }
 
+    @GetMapping("/mypage")
+    public String mypage(){ return "/mypage"; }
+
+    @GetMapping("/register")
+    public String register(){ return "/register"; }
+
 
 }
