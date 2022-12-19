@@ -53,18 +53,15 @@ pw_check_input.onkeydown = function (element) {
     pw_check_input.onkeyup = function (event){
         if(pw_check_input.value !== pw_input.value){
             pw_check_input.nextElementSibling.removeAttribute("hidden");
-            pw_check_input.removeAttribute("checked");
             pw_check_input.nextElementSibling.firstElementChild.textContent = "일치하지 않습니다. 다시 입력해주세요."
             pw_check_input.nextElementSibling.firstElementChild.style.color = "red";
         }
         if(pw_check_input.value === "" || pw_check_input.value === null){
             pw_check_input.nextElementSibling.removeAttribute("hidden");
-            pw_check_input.removeAttribute("checked");
             pw_check_input.nextElementSibling.firstElementChild.textContent = "입력한 내용이 없어요."
             pw_check_input.nextElementSibling.firstElementChild.style.color = "red";
         }
         if(pw_check_input.value === pw_input.value){
-            pw_check_input.toggleAttribute("checked");
             pw_check_input.nextElementSibling.toggleAttribute("hidden");
             pw_check_input.nextElementSibling.firstElementChild.style.color= "#a3a3a3";
         }
@@ -74,22 +71,19 @@ pw_check_input.onkeydown = function (element) {
 
 email_input.onkeydown = function (element) {
     email_input.onkeyup = function (event){
-        const email_pattern = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+        const email_pattern = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{3}$/i;
         if (!email_pattern.test(email_input.value)){
             email_input.nextElementSibling.removeAttribute("hidden");
-            email_input.removeAttribute("checked");
             email_input.nextElementSibling.firstElementChild.textContent = "올바른 이메일 형식이 아닙니다."
             email_input.nextElementSibling.firstElementChild.style.color = "red";
         }
         if(email_input.value === "" || email_input.value === null){
             email_input.nextElementSibling.removeAttribute("hidden");
-            email_input.removeAttribute("checked");
             email_input.nextElementSibling.firstElementChild.textContent = "입력한 내용이 없어요."
             email_input.nextElementSibling.firstElementChild.style.color = "red";
         }
         if(email_pattern.test(email_input.value)){
             email_input.nextElementSibling.toggleAttribute("hidden");
-            email_input.toggleAttribute("checked");
             email_input.nextElementSibling.firstElementChild.style.color= "#a3a3a3";
         }
         join_form_check();
@@ -97,12 +91,8 @@ email_input.onkeydown = function (element) {
 }
 
 function join_form_check(){
-    let count = 0;
     warningTags.forEach(function (element){
-        if (element.previousElementSibling.checked){
-            count += 1;
-        }
-        if(count===4){
+        if (element.firstElementChild.style.color !== "red"){
             submitBtn.style.backgroundColor ="white";
             submitBtn.style.color ="black";
         }

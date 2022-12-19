@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="68" height="24" viewBox="0 0 68 24">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_2855" data-name="Rectangle 2855" class="cls-1" d="M0 0h68v17.151H0z"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:none}
+        </style>
+    </defs>
+    <g id="TVING_logo_R" transform="translate(0 10.306)">
+        <g id="Group_5606" data-name="Group 5606" transform="translate(0 -7.809)">
+            <g id="Group_5451" data-name="Group 5451" style="clip-path:url(#clip-path)">
+                <path id="Path_2272" data-name="Path 2272" d="M31.026.5H36.7v15.9h-5.674zM0 5.25h4.078v11.157h5.486V5.25h4.078V.5H0zM24.412.5l-3.4 10.551a.289.289 0 0 1-.565-.089V.5h-5.389v15.9h9.9L30.334.5zm23.467 0v6.649a.289.289 0 0 1-.549.128L43.977.5h-5.36v15.9h5.212V9.8a.289.289 0 0 1 .549-.129l3.338 6.736h5.36V.5zm11.832 9.555V6.586A1.6 1.6 0 0 1 60.9 4.839a1.687 1.687 0 0 1 2.022 1.28l4.988-2.671C65.948-.136 62.271-.089 60.8.042A7.609 7.609 0 0 0 56.382 1.8a6.584 6.584 0 0 0-2.008 5.075v3.132c0 2.985 1.177 4.976 3.211 6.14 3.506 2.006 8.426.638 10.416-.876V7.636h-5.152V12.4c-.73.284-3.138.609-3.138-2.341" style="fill:#fff"/>
+            </g>
+        </g>
+        <path id="area" class="cls-1" transform="translate(0 -10.306)" d="M0 0h66.107v24H0z"/>
+    </g>
+</svg>

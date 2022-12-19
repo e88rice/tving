@@ -34,7 +34,7 @@ body{
             rgba(0,0,0,1) 80%,
             rgba(0,0,0,1) 50%
     ),
-    url("/static/image/background.jpg");
+    url("../image/background.jpg");
 }
 
 button{

@@ -13,7 +13,9 @@
     <span>반가워요</span><br/>
     <span>계정을 선택해주세요.</span>
 </div>
-<button type="button" class="tving-login-btn" th:onclick="|location.href='@{/login-main}'|">티빙으로 로그인하기</button>
+<a href="/user/login" th:href="@{/user/login}">
+    <button type="button" class="tving-login-btn">티빙으로 로그인하기</button>
+</a>
 <button type="button" class="naver-login-btn">네이버로 로그인하기</button>
 <button type="button" class="kakao-login-btn">카카오로 로그인하기</button>
 <img class="tving-login-icon"  th:src="@{image/tving-login-icon.svg}" src="../static/image/tving-login-icon.svg" alt="">

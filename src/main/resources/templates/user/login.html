@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>TVINGID로그인</title>
+</head>
+<link rel="stylesheet" th:href="@{/css/login-main.css}" href="../../static/css/login-main.css">
+<body>
+<img th:src="@{image/tving-new-logo-mobile.svg}" src="../../static/image/tving-new-logo-mobile.svg" alt="">
+<div id="login-container">
+    <div class="login-form-wrap">
+    <div class="main-text">TVING ID 로그인</div>
+    <form action="">
+        <input type="text" placeholder="아이디">
+        <input type="text" placeholder="비밀번호">
+        <div class="auto-login-wrap">
+            <input class="auto-login" type="checkbox">자동로그인
+        </div>
+        <button class="submit-btn" type="submit">로그인하기</button>
+    </form>
+        <div class="find-id-or-pw">
+            <div class="find-id">아이디찾기</div><div class="find-pw">비밀번호찾기</div>
+        </div>
+        <div class="tving-register-div">아직 계정이 없으신가요?<a th:href="@{/user/register}" href="/user/register">회원가입하기</a></div>
+    </div>
+</div>
+</body>
+</html>

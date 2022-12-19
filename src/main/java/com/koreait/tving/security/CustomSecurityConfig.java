@@ -36,9 +36,8 @@ public class CustomSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
         log.info(" ----------------- filterChain -------------------");
-        httpSecurity.formLogin()
-//                .permitAll()
-                .successForwardUrl("/home");
+//        httpSecurity.formLogin()
+//                .successForwardUrl("/home");
         return httpSecurity.build();
     }
 

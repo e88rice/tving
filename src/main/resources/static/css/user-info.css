@@ -1,0 +1,154 @@
+html{
+    background-color: black;
+    color: white;
+    padding: 20px 45px;
+}
+.top-logo > img {
+    width: 110px;
+}
+.user-info-text{
+    margin-top: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.user-profile-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+.user-id-wrap{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    border-bottom: 1px solid rgba(77,77,77, 0.8);
+}
+.user-id-wrap > span{
+    width: 150px;
+}
+.user-id-wrap > div > img {
+    margin-right: 10px;
+}
+
+.user-name-wrap {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    border-bottom: 1px solid rgba(77,77,77, 0.8);
+}
+.user-name-wrap > span {
+    width: 150px;
+}
+.user-name-wrap > div {
+    letter-spacing: -1px;
+}
+.user-email-wrap{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    border-bottom: 1px solid rgba(77,77,77, 0.8);
+}
+.user-email-wrap > span {
+    width: 150px;
+}
+.user-email-wrap > .email-value > input {
+    height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212121;
+    box-sizing: border-box;
+    background-color: #212121;
+    color: white;
+    font-size: 16px;
+}
+.user-email-wrap > .email-value > span {
+    padding: 0 10px;
+    font-size: 16px;
+}
+.user-email-wrap > .email-value > select {
+    height: 50px;
+    width: 160px;
+    background-color: black;
+    color: #b4b4b4;
+    border: 1px solid rgba(77,77,77, 0.8);
+    border-radius: 0.2em;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #939393;
+}
+.user-phone-number{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    border-bottom: 1px solid rgba(77,77,77, 0.8);
+}
+.user-phone-number > span:nth-child(1) {
+    width: 150px;
+}
+.user-phone-number > select{
+    height: 50px;
+    width: 110px;
+    background-color: black;
+    color: #b4b4b4;
+    border: 1px solid rgba(77,77,77, 0.8);
+    border-radius: 0.2em;
+    font-size: 18px;
+    padding-left: 15px;
+    color: #939393;
+}
+.user-phone-number > span:nth-child(n+2){
+    padding: 0 10px;
+}
+.user-phone-number > input {
+    height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #212121;
+    box-sizing: border-box;
+    background-color: #212121;
+    width: 130px;
+    font-size: 16px;
+}
+.user-phone-number > button {
+    margin-left: 10px;
+    height: 50px;
+    width: 150px;
+    background-color: black;
+    color: #b4b4b4;
+    border: 1px solid rgba(77,77,77, 0.8);
+    border-radius: 0.2em;
+    letter-spacing: -1px;
+    color: #939393;
+    font-size: 16px;
+}
+.user-delete-btn > button {
+    margin: 20px 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #bbbbbb;
+    font-size: 18px;
+    font-weight: bold;
+}
+.submit-btn-wrap {
+    display: flex;
+    justify-content: center;
+}
+.submit-btn-wrap > button{
+    width: 250px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 0.4em;
+    font-size: 20px;
+    font-weight: bold;
+}
+.submit-btn-wrap > button[type=button]{
+    background-color: black;
+    border: 1px solid rgba(77,77,77, 0.8);
+    color: white;
+}
