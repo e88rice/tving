@@ -1,6 +1,7 @@
 package com.koreait.tving.security;
 
 
+import com.koreait.tving.handler.Custom403Handler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -38,7 +40,24 @@ public class CustomSecurityConfig {
         log.info(" ----------------- filterChain -------------------");
 //        httpSecurity.formLogin()
 //                .successForwardUrl("/home");
+        httpSecurity.formLogin()
+                .loginPage("/user/login").successForwardUrl("/user/login");
+
+
+//        403 에러 처리 부분
+//        httpSecurity.exceptionHandling().accessDeniedHandler(accessDeniedHandler());
+//        httpSecurity.exceptionHandling().accessDeniedPage("/home");
+        httpSecurity.csrf().disable();
+        httpSecurity.oauth2Login()
+                .loginPage("/user/login");
+
+
         return httpSecurity.build();
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler(){
+        return new Custom403Handler();
     }
 
     @Bean

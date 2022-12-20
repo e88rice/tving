@@ -184,6 +184,10 @@ html{
     background: none;
 }
 
+#more-btn, #close-btn{
+    border: none;
+}
+
 .more-movie{
     margin: 0 4%;
 }

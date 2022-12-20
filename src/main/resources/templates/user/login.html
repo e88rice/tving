@@ -11,9 +11,9 @@
 <div id="login-container">
     <div class="login-form-wrap">
     <div class="main-text">TVING ID 로그인</div>
-    <form action="">
-        <input type="text" placeholder="아이디">
-        <input type="text" placeholder="비밀번호">
+    <form action="/user/login" method="post" th:action="@{/user/login}" th:method="post">
+        <input type="text" placeholder="아이디" name="username">
+        <input type="text" placeholder="비밀번호" name="password">
         <div class="auto-login-wrap">
             <input class="auto-login" type="checkbox">자동로그인
         </div>

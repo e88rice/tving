@@ -113,6 +113,8 @@ html{
     background-color: #212121;
     width: 130px;
     font-size: 16px;
+    color: white;
+    text-align: center;
 }
 .user-phone-number > button {
     margin-left: 10px;

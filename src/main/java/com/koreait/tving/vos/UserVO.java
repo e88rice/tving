@@ -20,5 +20,6 @@ public class UserVO {
     private String tel;
     private LocalDate registerDate;
     private boolean isSocial;
+    private String role;
 
 }

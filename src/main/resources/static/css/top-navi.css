@@ -3,6 +3,10 @@ html{
     color: white;
 }
 
+a{
+    text-decoration: none;
+}
+
 #top-navi{
     display: flex;
     justify-content: space-between;
@@ -48,7 +52,7 @@ html{
 .serach{
     margin-right: 50px;
 }
-.user-icon > img{
+.user-icon > a > img{
     width: 40px;
 }
 .user-icon{
@@ -122,7 +126,7 @@ html{
     height: 100%;
     cursor: pointer;
 }
-.user-mypage-2 > li > button {
+.user-mypage-2 > li > button, .user-mypage-2 > li > a > button {
     display: block;
     border: none;
     background: transparent;
@@ -139,3 +143,4 @@ html{
     background-color: #808080;
     color: white;
 }
+

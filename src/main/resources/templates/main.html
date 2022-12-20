@@ -24,9 +24,9 @@
     <div id="top-navi-right">
       <div class="serach navi-btns"><img th:src="@{image/icon_search.svg}" src="../static/image/icon_search.svg" alt=""> </div>
       <div class="user-icon navi-btns">
-
-        <img id="user-mypage-icon" th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
-
+        <a th:href="@{/user/info}" href="/user/info">
+          <img id="user-mypage-icon" th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
+        </a>
         <div id="mypage-container" class="user-mypage-more-container" hidden>
           <div class="user-mypage-1">
             <img th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
@@ -37,7 +37,9 @@
           </div>
           <ul class="user-mypage-2">
             <li>
-              <button>MY</button>
+              <a th:href="@{/user/info}" href="/user/info">
+                <button>MY</button>
+              </a>
             </li>
             <li>
               <button>이용권</button>

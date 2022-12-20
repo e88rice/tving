@@ -6,6 +6,7 @@
     <title>Title</title>
 </head>
 <link rel="stylesheet" th:href="@{/css/user-info.css}" href="../../static/css/user-info.css">
+<script th:src="@{/js/info.js}" src="../../static/js/info.js" defer></script>
 <body>
 <div class="top-logo">
   <img th:src="@{/image/logo-tving.svg}" src="../../static/image/logo-tving.svg" alt="">
@@ -15,42 +16,45 @@
   <p>회원정보 수정</p>
 </div>
 
-<form action="">
+<form action="/user/info" method="post" th:action="@{/user/info}" th:method="post" name="info-form">
   <div class="user-profile-container">
     
     <div class="user-id-wrap">
       <span>아이디</span>
-      <div><img th:src="@{image/naver-login-icon.svg}" src="../../static/image/naver-login-icon.svg" alt=""><span>guswns8780@naver.com</span></div>
+      <div><img th:src="@{/image/naver-login-icon.svg}" src="../../static/image/naver-login-icon.svg" alt=""><span sec:authentication="principal.username">익명</span></div>
+      <input type="hidden" name="id" th:value="${#authentication.principal.username}">
     </div>
     
     <div class="user-name-wrap">
       <span>이름</span>
-      <div>이현준</div>
+      <div sec:authentication="principal.nickName">익명</div>
     </div>
     
     <div class="user-email-wrap">
       <span>이메일</span>
       <div class="email-value">
-        <input type="text"><span>@</span><input type="text">
-        <select>
+        <input id="email-input-1" type="text" th:value="${#authentication.principal.email.split('@')[0]}"><span>@</span><input type="text" id="email-input-2"  th:value="${#authentication.principal.email.split('@')[1]}">
+        <select id="email-select">
           <option value="직접입력">직접입력</option>
           <option value="naver.com">naver.com</option>
           <option value="google.com">google.com</option>
           <option value="kakao.com">kakao.com</option>
         </select>
+        <input id="info-email-hidden" type="hidden" name="email">
       </div>
     </div>
 
     <div class="user-phone-number">
       <span>휴대폰 번호</span>
-      <select>
+      <select id="phoneNum-select">
         <option value="010">010</option> <option value="011">011</option> <option value="016">016</option>
         <option value="017">017</option> <option value="018">018</option> <option value="019">019</option>
       </select>
       <span>-</span>
-      <input type="text">
+      <input id="phoneNum-input-1" type="text" th:value="${#authentication.principal.tel.split('-')[1]}">
       <span>-</span>
-      <input type="text">
+      <input id="phoneNum-input-2" type="text" th:value="${#authentication.principal.tel.split('-')[2]}">
+      <input id="info-phoneNum-hidden" type="hidden" name="tel">
       <button>인증번호 전송</button>
     </div>
   </div>
@@ -60,7 +64,7 @@
   </div>
 
   <div class="submit-btn-wrap">
-    <button type="submit">확인</button>
+    <button type="submit" id="info-submit">확인</button>
     <button type="button">취소</button>
   </div>
 </form>

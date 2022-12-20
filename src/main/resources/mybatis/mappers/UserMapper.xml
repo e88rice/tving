@@ -9,4 +9,14 @@
         VALUES (#{id}, #{password}, #{id}, #{email})
     </insert>
 
+    <select id="find_user" resultType="com.koreait.tving.vos.UserVO">
+        select * from `user_tbl`
+        WHERE `id` = #{id}
+    </select>
+
+    <update id="update_user">
+        update `user_tbl` SET `tel` = #{tel}, `email` = #{email}
+        WHERE `id` = #{id}
+    </update>
+
 </mapper>
