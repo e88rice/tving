@@ -8,28 +8,29 @@
 <style>
 </style>
 <script th:src="@{https://kit.fontawesome.com/4ae8b5f015.js}" src="https://kit.fontawesome.com/4ae8b5f015.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" th:href="@{/css/mypage.css}" href="../static/css/mypage.css">
-<link rel="stylesheet" th:href="@{/css/top-navi.css}" href="../static/css/top-navi.css">
+<link rel="stylesheet" th:href="@{/css/mypage.css}" href="../../static/css/mypage.css">
+<link rel="stylesheet" th:href="@{/css/top-navi.css}" href="../../static/css/top-navi.css">
 <script src="https://kit.fontawesome.com/4ae8b5f015.js" crossorigin="anonymous"></script>
-<script th:src="@{/js/top-navi.js}" src="../static/js/top-navi.js" defer></script>
+<script th:src="@{/js/top-navi.js}" src="../../static/js/top-navi.js" defer></script>
+<script th:src="@{/js/mypage.js}" src="../static/js/mypage.js" defer></script>
 <body>
 <div id="top-navi">
   <div id="top-navi-left">
-    <div class="navi-btns"><img class="main-logo" th:src="@{image/tving-new-logo-mobile.svg}" src="../static/image/tving-new-logo-mobile.svg" alt=""></div>
-    <div class="live-btn navi-btns"><img th:src="@{image/icon_menu_live.svg}" src="../static/image/icon_menu_live.svg" alt="">실시간</div>
+    <div class="navi-btns"><img class="main-logo" th:src="@{/image/tving-new-logo-mobile.svg}" src="../../static/image/tving-new-logo-mobile.svg" alt=""></div>
+    <div class="live-btn navi-btns"><img th:src="@{/image/icon_menu_live.svg}" src="../../static/image/icon_menu_live.svg" alt="">실시간</div>
     <div class="tv-program navi-btns">TV프로그램</div>
     <div class="movie navi-btns">영화</div>
-    <div class="paramount navi-btns"><img th:src="@{/image/menu_paramount.svg}" src="../static/image/menu_paramount.svg" alt=""></div>
+    <div class="paramount navi-btns"><img th:src="@{/image/menu_paramount.svg}" src="../../static/image/menu_paramount.svg" alt=""></div>
   </div>
   <div id="top-navi-right">
-    <div class="serach navi-btns"><img th:src="@{image/icon_search.svg}" src="../static/image/icon_search.svg" alt=""> </div>
+    <div class="serach navi-btns"><img th:src="@{/image/icon_search.svg}" src="../../static/image/icon_search.svg" alt=""> </div>
     <div class="user-icon navi-btns">
 
-      <img id="user-mypage-icon" th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
+      <img id="user-mypage-icon" th:src="@{/image/F_webp.100.webp}" src="../../static/image/F_webp.100.webp" alt="">
 
       <div id="mypage-container" class="user-mypage-more-container" hidden>
         <div class="user-mypage-1">
-          <img th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
+          <img th:src="@{/image/F_webp.100.webp}" src="../../static/image/F_webp.100.webp" alt="">
           <div class="user-profile-change">
             <span>이현준</span>
             <button>프로필 전환 <i class="fa-solid fa-angle-right"></i></button>
@@ -57,7 +58,7 @@
   </div>
 </div>
 <div class="my-info-container">
-  <div class="my-info-icon"><img th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt=""></div>
+  <div class="my-info-icon"><img th:src="@{/image/F_webp.100.webp}" src="../../static/image/F_webp.100.webp" alt=""></div>
   <div class="my-info-wrap">
     <div class="my-info-info">
       <div class="my-info-name">
@@ -78,12 +79,14 @@
   </div>
   <div class="setting-btns">
     <div class="setting-position">
-      <i class="fa-solid fa-gear"></i><button>회원정보 수정</button>
+      <a th:href="@{/user/info}" href="/user/info">
+        <i class="fa-solid fa-gear"></i><button>회원정보 수정</button>
+      </a>
       <i class="fa-solid fa-circle-info"></i><button>기기등록/관리</button>
     </div>
   </div>
 </div>
-<div class="banner-place"><img th:src="@{image/banner.webp}" src="../static/image/banner.webp" alt=""><i class="fa-solid fa-x"></i></div>
+<div class="banner-place"><img th:src="@{/image/banner.webp}" src="../../static/image/banner.webp" alt=""><i class="fa-solid fa-x"></i></div>
 <div class="history-container">
   <div class="my-historys">
     <button class="view-history-btn">시청 내역</button>
@@ -97,32 +100,14 @@
     <div class="view-history-category">
       <button>TV프로그램</button><button>영화</button>
     </div>
-    <div class="view-history-TV">
-      <div>
-        <img th:src="@{image/TVprogram1.webp}" src="../static/image/TVprogram1.webp" alt="">
+    <div id="view-history-TV">
+
+      <div class="view-history-content">
+        <img th:src="@{/image/TVprogram1.webp}" src="../../static/image/TVprogram1.webp" alt="">
         <div class="history-TV-title">재벌집 막내아들 11화</div>
         <div class="history-TV-date">2022.12.12 시청</div>
       </div>
-      <div>
-        <img th:src="@{image/TVprogram2.webp}" src="../static/image/TVprogram2.webp" alt="">
-        <div class="history-TV-title">재벌집 막내아들 10화</div>
-        <div class="history-TV-date">2022.12.11 시청</div>
-      </div>
-      <div>
-        <img th:src="@{image/TVprogram3.webp}" src="../static/image/TVprogram3.webp" alt="">
-        <div class="history-TV-title">쇼미더머니 7화</div>
-        <div class="history-TV-date">2022.12.10 시청</div>
-      </div>
-      <div>
-        <img th:src="@{image/TVprogram4.webp}" src="../static/image/TVprogram4.webp" alt="">
-        <div class="history-TV-title">신병 8화</div>
-        <div class="history-TV-date">2022.12.05 시청</div>
-      </div>
-      <div>
-        <img th:src="@{image/TVprogram5.webp}" src="../static/image/TVprogram5.webp" alt="">
-        <div class="history-TV-title">재벌집 막내아들 9화</div>
-        <div class="history-TV-date">2022.12.03 시청</div>
-      </div>
+
     </div>
   </div>
 </div>

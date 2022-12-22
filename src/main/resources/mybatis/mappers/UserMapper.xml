@@ -19,4 +19,21 @@
         WHERE `id` = #{id}
     </update>
 
+    <!-- 해당 유저가 시청한 하나의 프로그램의 회차 정보를 가져옴 -->
+    <select id="get_watch_program_order" resultType="com.koreait.tving.vos.WatchVO">
+        SELECT * FROM `watch_tbl`
+        WHERE userID = #{id} AND programName = #{name}
+        ORDER BY `watchOrder` DESC LIMIT 1
+    </select>
+
+    <!-- 해당 유저가 시청한 시청내역을 날짜 내림차순 전부 가져옴 -->
+    <select id="get_all_watch_program_list" resultType="com.koreait.tving.vos.WatchVO">
+        SELECT w.*, c.`title` FROM `watch_tbl` w
+        INNER JOIN `contents_tbl` c
+        ON w.`programName` = c.`name`
+        AND w.`watchOrder` = c.`order`
+        WHERE w.`userID` = #{id}
+        ORDER BY `watchDate` DESC
+    </select>
+
 </mapper>

@@ -1,5 +1,6 @@
 package com.koreait.tving;
 
+import com.koreait.tving.mapper.MainMapper;
 import com.koreait.tving.mapper.UserMapper;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -12,10 +13,22 @@ class TvingApplicationTests {
 
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    MainMapper mainMapper;
 
     @Test
     void contextLoads() {
-        log.info(userMapper.update_user("testman1", "test@naver.com", "010-1111-2222"));
+        log.info(userMapper.get_all_watch_program_list("testman2"));
+    }
+
+    @Test
+    void test2(){
+        log.info(mainMapper.get_program("짱구는못말려"));
+    }
+
+    @Test
+    void test(){
+        log.info(mainMapper.get_program_contents("재벌집막내아들"));
     }
 
 }

@@ -1,13 +1,32 @@
-.tving-contents{
-    display: flex;
-    overflow: hidden;
+body{
+    overflow-x: hidden;
 }
 
-.tving-contents > img {
-    width: 270px;
+.tving-contents{
+    display: flex;
+    flex-direction: row;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.contents-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.tving-contents > a > .contents-list> img {
+    width: 240px;
     margin-right: 10px;
     border-radius: 0.1em;
 }
+
+.contents-list > span {
+    font-size: 20px;
+}
+
 
 .main-top{
     width: 100vw;

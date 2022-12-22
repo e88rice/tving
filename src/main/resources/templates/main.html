@@ -10,7 +10,6 @@
 <link rel="stylesheet" th:href="@{/css/top-navi.css}" href="../static/css/top-navi.css">
 <script src="https://kit.fontawesome.com/4ae8b5f015.js" crossorigin="anonymous"></script>
 <script th:src="@{/js/top-navi.js}" src="../static/js/top-navi.js" defer></script>
-<script th:src="@{/js/main.js}" src="../static/js/main.js"></script>
 <body>
 <div class="main-top background">
   <div id="top-navi">
@@ -24,7 +23,7 @@
     <div id="top-navi-right">
       <div class="serach navi-btns"><img th:src="@{image/icon_search.svg}" src="../static/image/icon_search.svg" alt=""> </div>
       <div class="user-icon navi-btns">
-        <a th:href="@{/user/info}" href="/user/info">
+        <a th:href="@{/user/mypage}" href="/user/info">
           <img id="user-mypage-icon" th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
         </a>
         <div id="mypage-container" class="user-mypage-more-container" hidden>
@@ -37,7 +36,7 @@
           </div>
           <ul class="user-mypage-2">
             <li>
-              <a th:href="@{/user/info}" href="/user/info">
+              <a th:href="@{/user/mypage}" href="/user/info">
                 <button>MY</button>
               </a>
             </li>
@@ -65,14 +64,70 @@
 <div class="contents-container">
     <div>티빙에서 꼭 봐야하는 콘텐츠</div>
     <div class="tving-contents">
-      <img th:src="@{image/movie1.webp}" src="../static/image/movie1.webp" alt="">
-      <img th:src="@{image/movie2.webp}" src="../static/image/movie2.webp" alt="">
-      <img th:src="@{image/movie3.webp}" src="../static/image/movie3.webp" alt="">
-      <img th:src="@{image/movie4.webp}" src="../static/image/movie4.webp" alt="">
-      <img th:src="@{image/movie5.webp}" src="../static/image/movie5.webp" alt="">
-      <img th:src="@{image/movie6.webp}" src="../static/image/movie6.webp" alt="">
-      <img th:src="@{image/movie7.webp}" src="../static/image/movie7.webp" alt="">
-      <img th:src="@{image/movie8.webp}" src="../static/image/movie8.webp" alt="">
+
+<!--      <a th:href="@{/main/program/{title}(title=${titles})}"  th:each="title: ${titles}">-->
+<!--        <div class="contents-list" >-->
+<!--          <img th:src="@{image/{title}/poster.webp(title=${title})}" alt="">-->
+<!--          <span>[[${title}]]</span>-->
+<!--        </div>-->
+<!--      </a>-->
+
+      <a th:href="@{/main/program/{title}(title=${titles[0]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[0]})}" src="../static/image/담보/poster.webp" alt="">
+          <span>[[${titles[0]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[1]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[1]})}" src="../static/image/담보/poster.webp" alt="">
+          <span>[[${titles[1]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[2]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[2]})}" src="../static/image/짱구는못말려/poster.webp" alt="">
+          <span>[[${titles[2]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[3]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[3]})}" src="../static/image/재벌집막내아들/poster.webp" alt="">
+          <span>[[${titles[3]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[4]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[4]})}" src="../static/image/캅시크릿/poster.webp" alt="">
+          <span>[[${titles[4]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[5]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[5]})}" src="../static/image/나를찾아줘/poster.webp" alt="">
+          <span>[[${titles[5]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[6]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[6]})}" src="../static/image/헤어질결심/poster.webp" alt="">
+          <span>[[${titles[6]}]]</span>
+        </div>
+      </a>
+
+      <a th:href="@{/main/program/{title}(title=${titles[7]})}">
+        <div class="contents-list">
+          <img th:src="@{image/{title}/poster.webp(title=${titles[7]})}" src="../static/image/허리케인쓰나미/poster.webp" alt="">
+          <span>[[${titles[7]}]]</span>
+        </div>
+      </a>
+
     </div>
   </div>
 

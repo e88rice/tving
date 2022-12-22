@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>캅 시크릿</title>
+</head>
+<link rel="stylesheet" th:href="@{/css/program.css}" href="../../static/css/program.css">
+<script th:src="@{https://kit.fontawesome.com/4ae8b5f015.js}" src="https://kit.fontawesome.com/4ae8b5f015.js" crossorigin="anonymous"></script>
+<script th:src="@{/js/program.js}" src="../../static/js/program.js" defer></script>
+<link rel="stylesheet" th:href="@{/css/top-navi.css}" href="../../static/css/top-navi.css">
+<script src="https://kit.fontawesome.com/4ae8b5f015.js" crossorigin="anonymous"></script>
+<script th:src="@{/js/top-navi.js}" src="../../static/js/top-navi.js" defer></script>
+<body>
+<div class="overlap-group">
+  <div class="blur-filter"></div>
+  <div id="top-navi">
+    <div id="top-navi-left">
+      <div class="navi-btns"><img class="main-logo" th:src="@{/image/tving-new-logo-mobile.svg}" src="../../static/image/tving-new-logo-mobile.svg" alt=""></div>
+      <div class="live-btn navi-btns"><img th:src="@{/image/icon_menu_live.svg}" src="../../static/image/icon_menu_live.svg" alt="">실시간</div>
+      <div class="tv-program navi-btns">TV프로그램</div>
+      <div class="movie navi-btns">영화</div>
+      <div class="paramount navi-btns"><img th:src="@{/image/menu_paramount.svg}" src="../../static/image/menu_paramount.svg" alt=""></div>
+    </div>
+    <div id="top-navi-right">
+      <div class="serach navi-btns"><img th:src="@{/image/icon_search.svg}" src="../../static/image/icon_search.svg" alt=""> </div>
+      <div class="user-icon navi-btns">
+        <a th:href="@{/user/mypage}">
+          <img id="user-mypage-icon" th:src="@{/image/F_webp.100.webp}" src="../../static/image/F_webp.100.webp" alt="">
+        </a>
+
+        <div id="mypage-container" class="user-mypage-more-container" hidden>
+          <div class="user-mypage-1">
+            <a th:href="@{/user/mypage}">
+              <img th:src="@{/image/F_webp.100.webp}" src="../../static/image/F_webp.100.webp" alt="">
+            </a>
+            <div class="user-profile-change">
+              <span>이현준</span>
+              <button>프로필 전환 <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <ul class="user-mypage-2">
+            <li>
+              <a th:href="@{/user/mypage}">
+                <button>MY</button>
+              </a>
+            </li>
+            <li>
+              <button>이용권</button>
+            </li>
+            <li>
+              <button>쿠폰등록</button>
+            </li>
+            <li>
+              <button>고객센터</button>
+            </li>
+            <li>
+              <button>로그아웃</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="product-wrap">
+    <div id="product-info-left">
+      <div id="product-title" th:text="${program.name}">캅 시크릿</div>
+      <div class="product-tags">
+        <span th:if="${program.getClassification() == '영화'}">개별구매</span>
+        <span th:if="${program.getClassification() == '영화'}">극장동시</span>
+        <span th:text="${program.age}+'세'"></span>
+        <span th:text="${program.time}">2022</span>
+        <span th:text="${program.genre}">코미디</span>
+        <span th:text="${program.distributor}">99분</span>
+        <span>DRM</span>
+      </div>
+      <div class="product-buy-btn">
+        <a th:href="|/main/program/watch/${program.name}/${contents.get(0).getOrder()}|">
+          <button id="program-watch-btn"><span th:if="${watchVO == null}">1화 시청하기</span><span th:if="${watchVO != null}" th:text="${watchVO.watchOrder}+'화 시청하기'"></span></button>
+
+        </a>
+        <div class="jjim-btn"><i class="fa-regular fa-heart"></i><span>찜</span></div>
+        <div class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i><span>공유</span></div>
+      </div>
+      <div class="product-introduce">
+        <div th:if="${#strings.trim(program.getCreators()) != ''}">크리에이터<span th:text="${program.getCreators()}">한네스 소르 도르손</span></div>
+        <div>출연<span th:text="${program.getCasts()}">오둔 블뢴달, 에길 에이나르손</span></div><br/>
+        <div id="product-real-introduce" th:text="${program.getIntroduce()}"></div>
+        <button id="more-btn" type="button">더보기 <img th:src="@{/image/icon_arrow_down.svg}" src="../../static/image/icon_arrow_down.svg" alt=""></button>
+        <div class="product-introduce-more" hidden>
+          <button id="close-btn">닫기 <img th:src="@{/image/icon_arrow_top.svg}" src="../../static/image/icon_arrow_top.svg" alt=""></button>
+        </div>
+      </div>
+    </div>
+    <div id="product-info-right">
+      <img th:src="|/image/${program.name}/poster.webp|" src="../../static/image/캅시크릿/poster.webp" alt="">
+    </div>
+  </div>
+</div>
+<div class="more-movie" th:if="${program.classification == '영화'}">
+  <div>비슷한 영화</div>
+  <div class="movie-list">
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/1.webp}" src="../../static/image/캅시크릿/1.webp" alt="">
+      <div>담보</div>
+    </div>
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/2.webp}" src="../../static/image/캅시크릿/2.webp" alt="">
+      <div>소리도 없이</div>
+    </div>
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/3.webp}" src="../../static/image/캅시크릿/3.webp" alt="">
+      <div>다만 악에서 구하소서</div>
+    </div>
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/4.webp}" src="../../static/image/캅시크릿/4.webp" alt="">
+      <div>도굴</div>
+    </div>
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/5.webp}" src="../../static/image/캅시크릿/5.webp" alt="">
+      <div>보이스</div>
+    </div>
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/6.webp}" src="../../static/image/캅시크릿/6.webp" alt="">
+      <div>삼진그룹영어 토익반</div>
+    </div>
+    <div class="more-movie-contents">
+      <img th:src="@{/image/캅시크릿/7.webp}" src="../../static/image/캅시크릿/7.webp" alt="">
+      <div>사라진 시간</div>
+    </div>
+  </div>
+</div>
+<div class="more-movie" th:if="${program.classification == '드라마' || program.classification == '애니메이션'}">
+  <div>회차 정보</div>
+  <div class="movie-list">
+    <div class="more-movie-contents" th:each="content, i : ${contents}">
+      <button class="more-watch-btn" th:name="${content.getOrder()}">
+        <img th:name="${content.getName()}" th:src="|/image/${program.name}/${content.getOrder()}.webp|" src="../../static/image/캅시크릿/1.webp" alt="">
+      </button>
+      <div th:text="${content.getTitle()+' '+content.getOrder()+'화'}"></div>
+      <span th:text="${content.getIntroduce()}"></span>
+      <div class="not-movie-contents-time"><span th:text="${content.getAiringDate()}"></span><span th:text="${' | '+content.getRunningTime() + '분'}"></span></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

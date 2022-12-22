@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koreait.tving.mapper.MainMapper">
+
+    <resultMap id="program_information" type="com.koreait.tving.vos.ProgramVO">
+        <result property="name" column="name" />
+        <result property="age" column="age" />
+        <result property="time" column="time" />
+        <result property="genre" column="genre" />
+        <result property="distributor" column="distributor" />
+        <result property="introduce" column="introduce" />
+        <result property="classification" column="class" />
+
+        <collection property="creators" column="name" javaType="list" />
+
+        <collection property="casts"  javaType="list">
+            <result column="castName" />
+        </collection>
+
+
+    </resultMap>
+
+    <select id="get_recommended_programs" resultType="string">
+        SELECT name FROM `program_tbl`
+    </select>
+
+    <!-- 프로그램 상세페이지 정보 -->
+    <select id="get_program" resultMap="program_information">
+        SELECT * FROM `program_tbl` p
+        INNER JOIN `creator_tbl` creator
+        ON creator.`programName` = `p`.`name`
+        INNER JOIN `cast_tbl` casts
+        ON casts.`programName` = `p`.`name`
+        WHERE p.`name` = #{name};
+    </select>
+
+    <!-- 프로그램 회차 등 추가 정보를 받아오기 -->
+    <select id="get_program_contents" resultType="com.koreait.tving.vos.ContentsVO">
+        SELECT * FROM `contents_tbl` WHERE `name` = #{name}
+        ORDER BY `order`;
+    </select>
+
+<!--    <insert id="insert_watched_program">-->
+<!--        INSERT INTO `watch_tbl`  (`userID`, `programName`, `watchOrder`, `watchDate`)-->
+<!--        VALUES (#{userID}, #{name}, #{order}, now())-->
+<!--        ON DUPLICATE KEY UPDATE-->
+<!--        `watchDate` = now()-->
+<!--    -->
+<!--    </insert>-->
+
+    <insert id="insert_watched_program">
+        INSERT INTO `watch_tbl` (`userID`, `programName`, `watchOrder`, `watchDate`)
+        VALUES (#{userID}, #{name}, #{order}, now())
+        ON DUPLICATE KEY UPDATE
+        `watchDate` = now()
+    </insert>
+    
+</mapper>

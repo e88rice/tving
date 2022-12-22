@@ -150,14 +150,14 @@ html{
     justify-content: flex-end;
 }
 
-.setting-position > i {
+.setting-position > i, .setting-position > a > i {
     color: #7b7b7b;
     font-size: 18px;
     padding-top: 3px;
     cursor: pointer;
 }
 
-.setting-position > button {
+.setting-position > button, .setting-position > a > button {
     border: none;
     background: transparent;
     color: white;
@@ -165,7 +165,7 @@ html{
     cursor: pointer;
 }
 
-.setting-position > i:nth-child(3){
+.setting-position > i:nth-child(2){
     padding-left: 30px;
 }
 
@@ -203,9 +203,8 @@ html{
     margin-left: 40px;
 }
 
-.view-history-TV{
+#view-history-TV{
     display: flex;
-    justify-content: space-around;
 }
 
 .view-history-category{
@@ -230,8 +229,10 @@ html{
 }
 
 
-.view-history-TV > div > img{
+#view-history-TV > div > img{
     width: 360px;
+    border-radius: 0.4em;
+    margin-right: 10px;
 }
 .history-TV-title{
     padding-top: 10px;

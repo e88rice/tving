@@ -50,6 +50,7 @@ public class CustomSecurityConfig {
         httpSecurity.csrf().disable();
         httpSecurity.oauth2Login()
                 .loginPage("/user/login");
+        httpSecurity.logout().logoutSuccessUrl("/");
 
 
         return httpSecurity.build();

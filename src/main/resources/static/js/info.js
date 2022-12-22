@@ -14,10 +14,10 @@ const infoSubmit = document.getElementById("info-submit");
 
 infoSubmit.onclick = () => {
     if(emailSelect.value.toString() === "직접입력"){
-      infoEmailHidden.value = emailInput1.value + emailInput2.value;
+      infoEmailHidden.value = emailInput1.value +'@'+ emailInput2.value;
     }
     if(emailSelect.value.toString() !== "직접입력"){
-        infoEmailHidden.value = emailInput1.value + emailSelect.value;
+        infoEmailHidden.value = emailInput1.value +'@'+ emailSelect.value;
     }
     infoPhoneHidden.value = phoneSelect.value+"-"+phoneNumInput1.value+"-"+phoneNumInput2.value;
     console.log(infoPhoneHidden.value+"이메일="+infoEmailHidden.value)

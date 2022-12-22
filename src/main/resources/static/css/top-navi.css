@@ -80,7 +80,7 @@ a{
     align-items: center;
     border-bottom: 1px solid #4d4d4d;
 }
-.user-mypage-1 > img {
+.user-mypage-1 > a > img {
     width: 60px;
 }
 .user-profile-change{

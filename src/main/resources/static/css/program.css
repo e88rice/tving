@@ -16,6 +16,15 @@ html{
     backdrop-filter: brightness(1.1) blur(40px);
 }
 
+#product-real-introduce{
+    width: 530px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
 #top-navi{
     display: flex;
     justify-content: space-between;
@@ -76,7 +85,7 @@ html{
 #product-info-left{
     padding-top: 20px;
 }
-.product-title{
+#product-title{
     font-size: 60px;
     font-weight: bolder;
 }
@@ -91,12 +100,13 @@ html{
     margin-right: 10px;
     text-align: center;
     border-radius: 0.3em;
-    width: 80px;
+    padding: 2px 6px;
     height: 30px;
 }
 
 .product-tags > img {
     margin-right: 10px;
+    width: 30px;
 }
 
 .product-tags > span:nth-child(1){
@@ -117,7 +127,7 @@ html{
     padding-top: 30px;
 }
 
-.product-buy-btn > button {
+.product-buy-btn > a > button {
     width: 250px;
     height: 80px;
     margin-right: 20px;
@@ -186,6 +196,7 @@ html{
 
 #more-btn, #close-btn{
     border: none;
+    cursor: pointer;
 }
 
 .more-movie{
@@ -203,9 +214,35 @@ html{
     display: flex;
     overflow: hidden;
 }
+.more-movie-contents > button {
+    cursor: pointer;
+    background-color: transparent;
+}
 
-.movie-list > img {
-    width: 270px;
+.more-movie-contents > button > img {
+    width: 280px;
     margin-right: 10px;
-    border-radius: 0.1em;
+    border-radius: 0.2em;
+}
+
+.more-movie-contents > div {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.more-movie-contents > span {
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: #cccccc;
+    padding-right: 10px;
+}
+
+.not-movie-contents-time > span {
+    font-size: 15px;
+    color: #838383;
 }

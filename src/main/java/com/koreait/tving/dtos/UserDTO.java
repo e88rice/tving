@@ -38,7 +38,7 @@ public class UserDTO extends User {
                    String role,
                    Collection<? extends GrantedAuthority> authorities) {
         super(username, password, authorities);
-        this.id = id;
+        this.id = username;
         this.password = password;
         this.name = name;
         this.nickName = nickName;
