@@ -11,15 +11,29 @@
         <result property="genre" column="genre" />
         <result property="distributor" column="distributor" />
         <result property="introduce" column="introduce" />
-        <result property="classification" column="class" />
+        <result property="classification" column="classification" />
 
-        <collection property="creators" column="name" javaType="list" />
+        <collection property="creators" ofType="string" javaType="list">
+            <result column="creatorName" />
+        </collection>
 
-        <collection property="casts"  javaType="list">
+        <collection property="casts" ofType="string"  javaType="list">
             <result column="castName" />
         </collection>
 
+    </resultMap>
 
+    <!-- 검색기능 -->
+    <resultMap id="program_result" type="com.koreait.tving.vos.ProgramVO">
+        <result property="classification" column="class" />
+
+        <collection property="creators" ofType="string" javaType="list">
+            <result column="creatorName" />
+        </collection>
+
+        <collection property="casts" ofType="string"  javaType="list">
+            <result column="castName" />
+        </collection>
     </resultMap>
 
     <select id="get_recommended_programs" resultType="string">
@@ -56,5 +70,19 @@
         ON DUPLICATE KEY UPDATE
         `watchDate` = now()
     </insert>
+    
+    <select id="search_program" resultType="com.koreait.tving.vos.ProgramVO">
+        SELECT DISTINCT `name`, `classification` FROM `program_tbl` p
+        INNER JOIN `cast_tbl` cast
+        ON p.`name` = cast.`programName`
+        INNER JOIN `creator_tbl` creator
+        ON p.`name` = creator.`programName`
+        WHERE p.`name` LIKE '%${word}%' OR
+        p.`genre` LIKE '%${word}%' OR
+        p.`distributor` LIKE '%${word}%' OR
+        p.`classification` LIKE '%${word}%' OR
+        cast.`castName` LIKE '%${word}%' OR
+        creator.`creatorName` LIKE '%${word}%'
+    </select>
     
 </mapper>

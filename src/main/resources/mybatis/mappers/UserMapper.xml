@@ -19,6 +19,11 @@
         WHERE `id` = #{id}
     </update>
 
+    <!-- -->
+    <update id="modify_membership">
+        UPDATE `user_tbl` SET `role` = #{role} WHERE `id` = #{id}
+    </update>
+
     <!-- 해당 유저가 시청한 하나의 프로그램의 회차 정보를 가져옴 -->
     <select id="get_watch_program_order" resultType="com.koreait.tving.vos.WatchVO">
         SELECT * FROM `watch_tbl`
@@ -35,5 +40,6 @@
         WHERE w.`userID` = #{id}
         ORDER BY `watchDate` DESC
     </select>
+
 
 </mapper>

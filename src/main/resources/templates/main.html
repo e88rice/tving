@@ -28,7 +28,9 @@
         </a>
         <div id="mypage-container" class="user-mypage-more-container" hidden>
           <div class="user-mypage-1">
-            <img th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
+              <a th:href="@{/user/mypage}">
+                  <img th:src="@{image/F_webp.100.webp}" src="../static/image/F_webp.100.webp" alt="">
+              </a>
             <div class="user-profile-change">
               <span>이현준</span>
               <button>프로필 전환 <i class="fa-solid fa-angle-right"></i></button>
@@ -41,7 +43,9 @@
               </a>
             </li>
             <li>
-              <button>이용권</button>
+                <a th:href="@{/user/membership}">
+                    <button>이용권</button>
+                </a>
             </li>
             <li>
               <button>쿠폰등록</button>
@@ -50,7 +54,9 @@
               <button>고객센터</button>
             </li>
             <li>
-              <button>로그아웃</button>
+                <a th:href="@{/logout}">
+                    <button>로그아웃</button>
+                </a>
             </li>
           </ul>
         </div>

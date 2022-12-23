@@ -29,7 +29,13 @@ public class MainService {
         return mainMapper.get_program_contents(name);
     }
 
+
+
     public boolean insert_watched_program(String id, String name, String order){
         return mainMapper.insert_watched_program(id, name, order);
+    }
+
+    public List<ProgramVO> search_program(String word){
+        return mainMapper.search_program(word);
     }
 }

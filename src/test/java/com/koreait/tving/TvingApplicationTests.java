@@ -18,7 +18,7 @@ class TvingApplicationTests {
 
     @Test
     void contextLoads() {
-        log.info(userMapper.get_all_watch_program_list("testman2"));
+        log.info(mainMapper.search_program("동일"));
     }
 
     @Test

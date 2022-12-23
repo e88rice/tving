@@ -19,6 +19,10 @@ public interface UserMapper {
     // 유저의 정보를 새롭게 전달하여 유저의 정보를 업데이트
     boolean update_user(UserVO vo);
 
+    // 유저의 권한을 수정하는 부분
+    boolean modify_membership(@Param("id")String userID, @Param("role")String role);
+
+    // 해당 유저가 시청한 하나의 프로그램의 회차정보를 가져옴
     WatchVO get_watch_program_order(@Param("id")String userID, @Param("name")String programName);
 
     // 유저 아이디를 전달하여 유저의 시청내역을 가져옴

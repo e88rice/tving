@@ -40,6 +40,7 @@ input[type = text]::placeholder{
 }
 .auto-login-wrap{
     margin-right: auto;
+    padding-top: 15px;
     font-size: 20px;
     color: #6e6e6e;
     cursor: pointer;
@@ -70,6 +71,13 @@ input[type = text]::placeholder{
     font-weight: bold;
     letter-spacing: normal;
 }
+
+.login-error-message{
+    width: 100%;
+    text-align: left;
+    color: red;
+}
+
 .find-id{
     padding-right: 25px;
     border-right: 1px solid rgba(255,255,255,0.3);

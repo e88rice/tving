@@ -12,6 +12,8 @@ html{
     color: white;
 }
 .overlap-group{
+    margin: 0;
+    padding: 0;
     -webkit-backdrop-filter: brightness(1.1) blur(40px);
     backdrop-filter: brightness(1.1) blur(40px);
 }
@@ -217,6 +219,12 @@ html{
 .more-movie-contents > button {
     cursor: pointer;
     background-color: transparent;
+}
+
+.more-movie-contents >  img {
+    width: 280px;
+    margin-right: 10px;
+    border-radius: 0.2em;
 }
 
 .more-movie-contents > button > img {

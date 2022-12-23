@@ -14,6 +14,8 @@
     <form action="/user/login" method="post" th:action="@{/user/login}" th:method="post">
         <input type="text" placeholder="아이디" name="username">
         <input type="text" placeholder="비밀번호" name="password">
+        <div class="login-error-message" th:if="${param.get('error')}">아이디나 비밀번호가 일치하지 않습니다</div>
+        <div class="login-error-message" th:if="${param.get('error')}">입력하신 내용을 다시 확인해주세요.</div>
         <div class="auto-login-wrap">
             <input class="auto-login" type="checkbox">자동로그인
         </div>

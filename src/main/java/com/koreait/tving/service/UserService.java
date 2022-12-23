@@ -19,17 +19,25 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    // 유저 회원가입
     public boolean register(UserVO vo){
         vo.setPassword(passwordEncoder.encode(vo.getPassword()));
         return userMapper.register(vo);
     }
 
+    // 유저 정보 가져오기
     public UserVO find_user(String username){
         return userMapper.find_user(username);
     }
 
+    // 유저 정보 수정
     public boolean update_user(UserVO vo){
         return userMapper.update_user(vo);
+    }
+    
+    // 유저의 멤버쉽 정보를 수정
+    public boolean modify_membership(@Param("id") String userID, @Param("role") String role){
+        return userMapper.modify_membership(userID, role);
     }
 
     public WatchVO get_watch_program_order(@Param("id") String userID, @Param("name") String name){

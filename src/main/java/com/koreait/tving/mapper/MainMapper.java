@@ -18,4 +18,8 @@ public interface MainMapper {
 
     // 시청 버튼을 눌렀을 시 시청 내역에 추가(프로그램 이름)
     boolean insert_watched_program(@Param("userID") String id, @Param("name") String name, @Param("order") String order);
+
+    // 검색어로 검색해서 해당 프로그램의 정보를 받아옴
+    List<ProgramVO> search_program(String word);
+    
 }

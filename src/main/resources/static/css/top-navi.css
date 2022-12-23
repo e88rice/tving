@@ -51,6 +51,7 @@ a{
 }
 .serach{
     margin-right: 50px;
+    cursor: pointer;
 }
 .user-icon > a > img{
     width: 40px;

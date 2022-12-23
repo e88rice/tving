@@ -1,0 +1,90 @@
+html{
+    background-color: black;
+    /*background-color: rgba(37, 36, 36, 0.99);*/
+    color: white;
+}
+ul{
+    list-style: none;
+}
+li{
+    padding-bottom: 10px;
+}
+#search-container{
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    margin: 0 100px;
+    height: 80vh;
+}
+#search-bar-container{
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+}
+
+#search-form-wrap{
+    display: flex;
+}
+
+#search-form-wrap > input {
+    width: 70vw;
+    padding-left: 200px;
+    height: 50px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+#search-form-wrap > button {
+    background: transparent;
+    border: none;
+}
+
+#search-form-wrap > button > img {
+    width: 50px;
+    background: transparent;
+    cursor: pointer;
+}
+
+#my-search-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80vw;
+    color: white;
+    background: transparent;
+    font-size: 24px;
+    height: 80%;
+}
+#my-lately-search{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 50%;
+}
+#my-lately-search > span{
+    font-size: 28px;
+    font-weight: bold;
+}
+#recommend-search-list{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 50%;
+    border-left: 1px solid rgba(255,255,255,0.8);
+}
+#recommend-search-list > span{
+    font-size: 28px;
+    font-weight: bold;
+}

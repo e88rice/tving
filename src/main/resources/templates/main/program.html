@@ -3,7 +3,7 @@
       xmlns:sec="www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>캅 시크릿</title>
+    <title>프로그램쓰</title>
 </head>
 <link rel="stylesheet" th:href="@{/css/program.css}" href="../../static/css/program.css">
 <script th:src="@{https://kit.fontawesome.com/4ae8b5f015.js}" src="https://kit.fontawesome.com/4ae8b5f015.js" crossorigin="anonymous"></script>
@@ -46,7 +46,9 @@
               </a>
             </li>
             <li>
-              <button>이용권</button>
+              <a th:href="@{/user/membership}">
+                <button>이용권</button>
+              </a>
             </li>
             <li>
               <button>쿠폰등록</button>
@@ -55,7 +57,9 @@
               <button>고객센터</button>
             </li>
             <li>
-              <button>로그아웃</button>
+              <a th:href="@{/logout}">
+                <button>로그아웃</button>
+              </a>
             </li>
           </ul>
         </div>
@@ -75,15 +79,21 @@
         <span>DRM</span>
       </div>
       <div class="product-buy-btn">
-        <a th:href="|/main/program/watch/${program.name}/${contents.get(0).getOrder()}|">
-          <button id="program-watch-btn"><span th:if="${watchVO == null}">1화 시청하기</span><span th:if="${watchVO != null}" th:text="${watchVO.watchOrder}+'화 시청하기'"></span></button>
-
+        <a th:if="${program.getClassification() != '영화'}" th:href="|/main/program/watch/${program.name}/${contents.get(0).getOrder()}|">
+          <button id="program-watch-btn">
+            <span th:if="${#authentication.principal.role == 'USER'}">이용권 구매하기</span>
+            <span th:if="${watchVO == null && #authentication.principal.role == 'BASIC'}">1화 시청하기</span>
+            <span th:if="${watchVO != null && #authentication.principal.role == 'BASIC'}" th:text="|${watchVO.watchOrder}화 시청하기|"></span></button>
+          </button>
+        </a>
+        <a th:if="${program.getClassification() == '영화'}" th:href="|/main/program/watch/${program.name}/|">
+          <button id="program-watch-btn-movie"><span th:if="${watchVO == null}">구매하기</span><span th:if="${watchVO != null}">이어보기</span></button>
         </a>
         <div class="jjim-btn"><i class="fa-regular fa-heart"></i><span>찜</span></div>
         <div class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i><span>공유</span></div>
       </div>
       <div class="product-introduce">
-        <div th:if="${#strings.trim(program.getCreators()) != ''}">크리에이터<span th:text="${program.getCreators()}">한네스 소르 도르손</span></div>
+        <div>크리에이터<span th:text="${program.getCreators()}">한네스 소르 도르손</span></div>
         <div>출연<span th:text="${program.getCasts()}">오둔 블뢴달, 에길 에이나르손</span></div><br/>
         <div id="product-real-introduce" th:text="${program.getIntroduce()}"></div>
         <button id="more-btn" type="button">더보기 <img th:src="@{/image/icon_arrow_down.svg}" src="../../static/image/icon_arrow_down.svg" alt=""></button>

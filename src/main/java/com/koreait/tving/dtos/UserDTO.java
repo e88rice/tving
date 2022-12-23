@@ -11,7 +11,6 @@ import java.util.Collection;
 @Getter
 @Setter
 @ToString
-//@Builder
 public class UserDTO extends User {
 
     private String id;
@@ -46,6 +45,18 @@ public class UserDTO extends User {
         this.tel = tel;
         this.registerDate = registerDate;
         this.isSocial = isSocial;
+        this.role = role;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRole(String role) {
         this.role = role;
     }
 }
