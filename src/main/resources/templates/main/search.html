@@ -67,8 +67,8 @@
 <div id="search-container" hidden>
 
   <div id="search-bar-container">
-    <form id="search-form-wrap" action="">
-      <input type="text" placeholder="TV프로그램, 영화 제목 및 출연진으로 검색해보세요">
+    <form id="search-form-wrap" th:action="@{/search}" th:method="get">
+      <input type="text" placeholder="TV프로그램, 영화 제목 및 출연진으로 검색해보세요" name="word">
       <button id="search-btn" type="submit">
         <img class="search-icon" th:src="@{/image/icon_search.svg}" src="../../static/image/icon_search.svg" alt="">
       </button>
